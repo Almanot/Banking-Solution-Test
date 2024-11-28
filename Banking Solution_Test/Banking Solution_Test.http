@@ -1,0 +1,32 @@
+@Banking_Solution_Test_HostAddress = http://localhost:5043
+
+Get {{Banking_Solution_Test_HostAddress}}/Bank/
+Accept: application/json
+
+###
+Post {{Banking_Solution_Test_HostAddress}}/Bank/
+Content-Type: application/json
+
+{
+  "Id":"0",
+  "Name":"Anna",
+  "Balance": "100"
+}
+
+###
+Put {{Banking_Solution_Test_HostAddress}}/Bank/withdraw?Id=1&amount=50
+
+###
+Put {{Banking_Solution_Test_HostAddress}}/Bank/deposit?Id=1&amount=100
+
+###
+Put {{Banking_Solution_Test_HostAddress}}/Bank/transfer?senderID=1&recipientID=3&amount=40
+
+###
+Get {{Banking_Solution_Test_HostAddress}}/Bank/
+Accept: application/json
+
+###
+DELETE {{Banking_Solution_Test_HostAddress}}/Bank/
+
+###
